@@ -1,0 +1,8 @@
+{
+    "tls": true,
+    "host": "localhost",
+    "port": 3000,
+    "db_url": "mongodb://tosser:Password1!@ds031627.mongolab.com:31627/ottemo",
+    "db_name": "ottemo",
+    "session_storage": 0
+}
