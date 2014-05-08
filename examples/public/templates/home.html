@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Google ID Association Example</title>
+</head>
+<body>
+    <h2>Hi</h2>
+    <h4>{{.FirstName}}</h4>
+    <h4>{{.LastName}}</h4>
+    <h4>{{.Email}}</h4>
+    {{if .Avatar}}
+        <img src="{{.Avatar}}" alt="" />
+    {{end}}
+    <h4>New generated password: {{.GeneratedPwd}}</h4>
+</body>
+</html>

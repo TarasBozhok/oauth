@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Ottemo</title>
+    </head>
+<body>
+    <h3>Ottemo Login</h3>
+    {{.}}
+    <form action="/login" method="post">
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit">
+    </form>
+    <a href="/auth/google">Login with Google</a>
+    <a href="/auth/facebook">Login with Facebook</a>
+</body>
+</html>
+
