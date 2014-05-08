@@ -1,6 +1,20 @@
-To use this package add next to main file:
+//To use this package add next to main file:
 
 import "github.com/tossimo/oauth"
+ 
+   googleOpts := &oauth.OAuth2Options{
+           ClientID:     "",                                                       //provide your own
+           ClientSecret: "",                                                       //provide your own
+           RedirectURL:  "http://HOST:PORT/auth/callback/google",                  //change host and port for needed
+           Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"},
+   }
+
+   fbOpts := &oauth.OAuth2Options{
+           ClientID: "",                                                           //provide your own
+           ClientSecret: "",                                                       //provide your own
+           RedirectURL: "http://HOST:PORT/auth/callback/facebook",                 //change host and port for needed
+           Scopes: []string{"email"},
+   } 
  
   //Login with Google
         m.Get("/auth/google", oauth.AuthGoogle(googleOpts))
