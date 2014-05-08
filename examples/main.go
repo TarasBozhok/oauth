@@ -1,36 +1,15 @@
 package main
 
 import (
-	"fmt"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
-	"github.com/ottemo/ottemo-go/config"
-	"log"
 	"net/http"
 	"github.com/Tossimo/oauth"
 )
 
-var conf *config.Config
-
-// init - initialization and configuration
-func init() {
-	// read in config file
-	filename, err := config.DiscoverConfig("config.json", "local.json")
-	if err != nil {
-		log.Fatal("No configuration file found")
-	}
-	conf, err = config.NewConfig(filename)
-	if err != nil {
-		log.Fatalf("Error parsing config.json: %s", err.Error())
-	}
-
-}
-
 func main() {
 	m := App()
-	listen := fmt.Sprintf("%s:%d", conf.Host, conf.Port)
-	fmt.Printf("Ottemo listening on %s\n", listen)
-	log.Fatal(http.ListenAndServe(listen, m))
+	http.ListenAndServe("localhost:3000", m)
 }
 
 // App returns a new martini app configured with middleware.
@@ -91,3 +70,4 @@ func App() *martini.ClassicMartini {
 
 	return m
 }
+
